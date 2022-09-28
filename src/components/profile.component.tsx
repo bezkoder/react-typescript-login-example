@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
 import IUser from "../types/user.type";
 
@@ -30,7 +30,7 @@ export default class Profile extends Component<Props, State> {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to={this.state.redirect} />
+      return <Navigate to={this.state.redirect} />
     }
 
     const { currentUser } = this.state;
